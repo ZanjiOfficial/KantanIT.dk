@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KantanIT – IT-hjælp hjemme hos dig i Odense</title>
+<meta name="description" content="Personlig IT-hjælp hjemme hos dig i Odense. Telefon, e-mail, printer, TV og køb af nyt udstyr. 400 kr. pr. påbegyndt time – du betaler kun, når vi kommer videre.">
+<meta property="og:title" content="KantanIT – IT-hjælp hjemme hos dig i Odense">
+<meta property="og:description" content="Telefon, e-mail, printer, TV og alt derimellem. Ring 71 91 39 93.">
+<meta property="og:image" content="https://kantanit.dk/img/hero.jpg">
+<meta property="og:locale" content="da_DK">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230e5a63'/%3E%3Cpath d='M10 8v16M10 16l9-8M13 13.5L21 24' stroke='%23ffe27a' stroke-width='3.2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --mist: #f3f6f5;
+    --paper: #ffffff;
+    --ink: #1b2a2f;
+    --muted: #4b5d62;
+    --petrol: #0e5a63;
+    --petrol-deep: #0a434a;
+    --petrol-tint: #e2eeec;
+    --note: #ffe27a;
+    --line: #d3e0de;
+    --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+    --display: "Bricolage Grotesque", system-ui, sans-serif;
+    --body: "Atkinson Hyperlegible", system-ui, sans-serif;
+    --hand: "Caveat", "Segoe Print", cursive;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--mist);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 1.25rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { display: block; max-width: 100%; height: auto; }
+  h1, h2, h3 { font-family: var(--display); line-height: 1.12; margin: 0; text-wrap: balance; }
+  h1 { font-size: clamp(2.4rem, 6vw, 4.1rem); font-weight: 800; letter-spacing: -0.025em; }
+  h2 { font-size: clamp(2rem, 4.4vw, 3rem); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.5em; }
+  h3 { font-size: 1.4rem; font-weight: 600; letter-spacing: -0.01em; }
+  p { margin: 0 0 1em; max-width: 36em; text-wrap: pretty; }
+  a { color: var(--petrol); text-underline-offset: 0.18em; }
+  :focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; box-shadow: 0 0 0 7px var(--note); border-radius: 4px; }
+
+  .wrap { width: min(1180px, 100% - 40px); margin-inline: auto; }
+  .skip { position: absolute; left: 16px; top: -100px; background: var(--note); color: var(--ink); padding: 12px 18px; z-index: 10; font-weight: 700; }
+  .skip:focus { top: 16px; }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex; align-items: center; gap: 12px;
+    font: 700 1.25rem/1 var(--body); text-decoration: none;
+    padding: 20px 28px; border-radius: 14px; border: 2px solid transparent;
+    cursor: pointer;
+    transition: transform 160ms var(--ease-out), background-color 200ms ease, border-color 200ms ease;
+  }
+  .btn:active { transform: scale(0.97); }
+  .btn svg { width: 26px; height: 26px; flex: none; }
+  .btn-main { background: var(--petrol); color: #fff; box-shadow: 0 10px 24px -12px rgba(10, 67, 74, 0.7); }
+  .btn-plain { background: transparent; color: var(--petrol-deep); border-color: var(--petrol); }
+  @media (hover: hover) and (pointer: fine) {
+    .btn-main:hover { background: var(--petrol-deep); }
+    .btn-plain:hover { background: var(--petrol-tint); }
+  }
+
+  /* Header */
+  .top { padding: 18px 0; }
+  .top .wrap { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .logo { font: 800 1.7rem/1 var(--display); letter-spacing: -0.03em; color: var(--ink); text-decoration: none; }
+  .logo span { color: var(--petrol); }
+  .top .btn { padding: 14px 20px; font-size: 1.15rem; }
+
+  /* Hero */
+  .hero { padding: 32px 0 96px; }
+  .hero .wrap { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 64px; align-items: center; }
+  .hero .lead { font-size: 1.45rem; color: var(--muted); margin: 28px 0 36px; max-width: 30em; }
+  .actions { display: flex; flex-wrap: wrap; gap: 14px; }
+  .promises { list-style: none; padding: 0; margin: 40px 0 0; display: grid; gap: 12px; }
+  .promises li { display: flex; gap: 14px; align-items: flex-start; }
+  .promises svg { width: 28px; height: 28px; flex: none; color: var(--petrol); margin-top: 2px; }
+
+  .hero-photo { position: relative; }
+  .hero-photo img { border-radius: 28px; aspect-ratio: 4 / 5; object-fit: cover; width: 100%; box-shadow: 0 30px 60px -30px rgba(14, 90, 99, 0.45); }
+  .note {
+    position: absolute; left: -48px; bottom: 40px; width: 250px;
+    background: var(--note); color: var(--ink);
+    padding: 22px 24px 20px; border-radius: 4px;
+    font-family: var(--hand); font-size: 1.85rem; line-height: 1.15;
+    transform: rotate(-4deg);
+    box-shadow: 0 2px 0 rgba(0,0,0,0.04), 0 18px 30px -14px rgba(90, 70, 0, 0.45);
+  }
+  .note::before {
+    content: ""; position: absolute; top: -12px; left: 50%; width: 90px; height: 26px; translate: -50% 0; rotate: 2deg;
+    background: rgba(255, 255, 255, 0.55); border: 1px solid rgba(0,0,0,0.05);
+  }
+  .note a { color: inherit; text-decoration: none; font-size: 2.3rem; display: block; margin-top: 4px; }
+  .note a:hover { text-decoration: underline; }
+
+  /* Sections */
+  section { padding: 104px 0 112px; }
+  .intro { font-size: 1.35rem; color: var(--muted); margin-bottom: 56px; }
+
+  /* Services */
+  .services { background: var(--paper); }
+  .services .wrap { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 72px; align-items: start; }
+  .services figure { margin: 0; position: sticky; top: 32px; }
+  .services figure img { border-radius: 24px; aspect-ratio: 3 / 4; object-fit: cover; width: 100%; }
+  .service-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0 40px; }
+  .service-list li { padding: 28px 0; border-top: 2px solid var(--line); }
+  .service-list svg { width: 36px; height: 36px; color: var(--petrol); margin-bottom: 14px; }
+  .service-list p { margin: 8px 0 0; color: var(--muted); font-size: 1.15rem; }
+
+  /* Steps */
+  .steps-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+  .steps { list-style: none; padding: 0; margin: 0; counter-reset: step; }
+  .steps li { counter-increment: step; display: grid; grid-template-columns: 64px 1fr; gap: 22px; padding-bottom: 36px; position: relative; }
+  .steps li::before {
+    content: counter(step);
+    width: 64px; height: 64px; border-radius: 50%;
+    display: grid; place-items: center;
+    background: var(--petrol); color: #fff;
+    font: 800 1.7rem/1 var(--display);
+  }
+  .steps li:not(:last-child)::after {
+    content: ""; position: absolute; left: 31px; top: 72px; bottom: 8px; width: 2px; background: var(--line);
+  }
+  .steps h3 { margin-top: 14px; }
+  .steps p { margin: 6px 0 0; color: var(--muted); }
+  .steps-photo img { border-radius: 24px; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+
+  /* Price */
+  .price { background: var(--petrol-tint); }
+  .price .wrap { display: grid; grid-template-columns: 1fr 1.1fr; gap: 72px; align-items: center; }
+  .amount { font: 800 clamp(4.5rem, 13vw, 8.5rem)/0.9 var(--display); letter-spacing: -0.045em; color: var(--petrol-deep); font-variant-numeric: tabular-nums; }
+  .amount small { display: block; font: 600 1.6rem/1.3 var(--display); letter-spacing: -0.01em; margin-top: 18px; color: var(--ink); }
+  .terms { list-style: none; padding: 0; margin: 0; }
+  .terms li { padding: 26px 0; border-top: 2px solid rgba(14, 90, 99, 0.18); display: grid; grid-template-columns: 40px 1fr; gap: 16px; }
+  .terms li:last-child { border-bottom: 2px solid rgba(14, 90, 99, 0.18); }
+  .terms svg { width: 32px; height: 32px; color: var(--petrol); margin-top: 2px; }
+  .terms strong { display: block; font-size: 1.3rem; }
+  .terms span { color: var(--muted); }
+
+  /* About */
+  .about .wrap { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 72px; align-items: center; }
+  .about img { border-radius: 24px; width: 100%; max-width: 480px; justify-self: center; aspect-ratio: 1; object-fit: cover; }
+  .signoff { font: 600 2.4rem/1 var(--hand); color: var(--petrol); margin-top: 8px; }
+
+  /* Contact */
+  .contact { background: var(--paper); }
+  .contact .wrap { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 72px; align-items: start; }
+  .call-box { background: var(--note); border-radius: 20px; padding: 32px; margin-top: 28px; }
+  .call-box p { margin: 0 0 6px; }
+  .call-box a { font: 800 clamp(2.2rem, 5vw, 2.9rem)/1.1 var(--display); color: var(--ink); text-decoration: none; letter-spacing: -0.02em; }
+  .call-box a:hover { text-decoration: underline; }
+  .mail-line { margin-top: 28px; }
+
+  form { display: grid; gap: 22px; }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  label { display: block; font-weight: 700; margin-bottom: 8px; }
+  .opt { font-weight: 400; color: var(--muted); }
+  input, textarea {
+    width: 100%; font: inherit; color: var(--ink);
+    padding: 16px 18px; border: 2px solid var(--line); border-radius: 12px; background: var(--mist);
+    transition: border-color 200ms ease, background-color 200ms ease;
+  }
+  input:focus, textarea:focus { border-color: var(--petrol); background: #fff; outline: none; box-shadow: 0 0 0 4px var(--note); }
+  input:user-invalid, textarea:user-invalid { border-color: #b3261e; }
+  textarea { min-height: 170px; resize: vertical; }
+  .form-note { font-size: 1.05rem; color: var(--muted); margin: 0; }
+  .thanks { display: none; background: var(--petrol-tint); border-left: 6px solid var(--petrol); padding: 20px 24px; border-radius: 8px; margin-bottom: 8px; }
+  .thanks:target { display: block; }
+  .thanks p { margin: 0; }
+
+  footer { background: var(--petrol-deep); color: #e9f2f1; padding: 44px 0 52px; font-size: 1.1rem; }
+  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px 40px; }
+  footer a { color: #fff; }
+  footer .logo { color: #fff; }
+  footer .logo span { color: var(--note); }
+  .foot-tag { margin: 12px 0 0; }
+
+  /* The one orchestrated moment: hero settles in on first load */
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-copy > * { animation: rise 700ms var(--ease-out) both; }
+    .hero-copy > :nth-child(2) { animation-delay: 70ms; }
+    .hero-copy > :nth-child(3) { animation-delay: 140ms; }
+    .hero-copy > :nth-child(4) { animation-delay: 210ms; }
+    .hero-photo img { animation: reveal 1000ms var(--ease-out) 120ms both; }
+    .note { animation: stick 650ms var(--ease-out) 650ms both; }
+    @keyframes rise { from { opacity: 0; transform: translateY(14px); } }
+    @keyframes reveal { from { opacity: 0; clip-path: inset(8% 8% 8% 8% round 28px); } to { clip-path: inset(0 round 28px); } }
+    @keyframes stick { from { opacity: 0; transform: rotate(-9deg) translateY(-18px) scale(0.96); } }
+  }
+
+  @media (max-width: 900px) {
+    .hero .wrap, .services .wrap, .steps-grid, .price .wrap, .about .wrap, .contact .wrap { grid-template-columns: 1fr; gap: 48px; }
+    .hero { padding-bottom: 72px; }
+    .hero-photo { margin: 0 0 24px; }
+    .hero-photo img { aspect-ratio: 4 / 3.4; }
+    .note { left: 16px; bottom: -36px; width: 220px; font-size: 1.6rem; }
+    .note a { font-size: 2rem; }
+    .services figure { position: static; }
+    .services figure img { aspect-ratio: 16 / 10; object-position: center 15%; }
+    section { padding: 72px 0 80px; }
+    .about img { order: -1; }
+  }
+  @media (max-width: 600px) {
+    body { font-size: 1.2rem; }
+    .service-list { grid-template-columns: 1fr; }
+    .row { grid-template-columns: 1fr; }
+    .btn { width: 100%; justify-content: center; }
+    .top .btn { width: auto; }
+    .top .btn .label { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#indhold">Gå til indhold</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"/></symbol>
+  <symbol id="i-mobile" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="1.75" width="12" height="20.5" rx="2.5"/><path d="M10.5 19h3"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2.25" y="4.5" width="19.5" height="15" rx="2.25"/><path d="m3 6.5 9 6.5 9-6.5"/></symbol>
+  <symbol id="i-printer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 9V2.75h11V9M6.5 17.5H4.25A1.75 1.75 0 0 1 2.5 15.75v-5A1.75 1.75 0 0 1 4.25 9h15.5a1.75 1.75 0 0 1 1.75 1.75v5a1.75 1.75 0 0 1-1.75 1.75H17.5"/><rect x="6.5" y="14" width="11" height="7.25" rx="1"/></symbol>
+  <symbol id="i-tv" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2.25" y="3.75" width="19.5" height="13.5" rx="1.5"/><path d="M8 21h8M12 17.25V21"/></symbol>
+  <symbol id="i-bag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007Z"/></symbol>
+  <symbol id="i-bulb" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21.5h4M12 2.5a6.75 6.75 0 0 0-3.75 12.36V16h7.5v-1.14A6.75 6.75 0 0 0 12 2.5Z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5" stroke-width="1.6"/><path d="m7.75 12.25 2.75 2.75 5.75-6"/></symbol>
+  <symbol id="i-bike" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.5" cy="16.5" r="3.75"/><circle cx="18.5" cy="16.5" r="3.75"/><path d="M5.5 16.5 9 9h7l2.5 7.5M12 16.5 9 9M14 6h3l-1 3M8 6.5h3"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5l3.5 2"/></symbol>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#" aria-label="KantanIT, til toppen">Kantan<span>IT</span></a>
+    <a class="btn btn-main" href="tel:+4571913993"><svg aria-hidden="true"><use href="#i-phone"/></svg><span class="label">Ring </span>71 91 39 93</a>
+  </div>
+</header>
+
+<main id="indhold">
+
+  <div class="hero">
+    <div class="wrap">
+      <div class="hero-copy">
+        <h1>IT-hjælp hjemme hos dig, i dit tempo</h1>
+        <p class="lead">Jeg kommer hjem til dig i Odense og hjælper med telefon, e-mail, printer, TV og alt det andet, du gerne vil have til at virke.</p>
+        <div class="actions">
+          <a class="btn btn-main" href="tel:+4571913993"><svg aria-hidden="true"><use href="#i-phone"/></svg>Ring 71 91 39 93</a>
+          <a class="btn btn-plain" href="#kontakt">Skriv en besked</a>
+        </div>
+        <ul class="promises">
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Jeg kommer hjem til dig</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Du betaler kun, når vi er kommet videre</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>8 års erfaring med IT-support</li>
+        </ul>
+      </div>
+      <div class="hero-photo">
+        <img src="img/hero.jpg" width="1400" height="2100" alt="Et smilende par sidder ved køkkenbordet og griner sammen foran en bærbar computer." fetchpriority="high">
+        <div class="note">Ring bare, så finder vi en tid
+          <a href="tel:+4571913993">71 91 39 93</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="services" id="hjaelp" aria-labelledby="h-hjaelp">
+    <div class="wrap">
+      <figure>
+        <img src="img/tablet.jpg" width="1000" height="1500" loading="lazy" alt="En kvinde med langt gråt hår i grøn kjole smiler, mens hun bruger sin tablet.">
+      </figure>
+      <div>
+        <h2 id="h-hjaelp">Det kan jeg hjælpe med</h2>
+        <p class="intro">Store og små opgaver. Vi tager det, du har brug for.</p>
+        <ul class="service-list">
+          <li><svg aria-hidden="true"><use href="#i-mobile"/></svg><h3>Mobil og tablet</h3><p>Opsætning, apps, billeder, MitID og videoopkald med familien.</p></li>
+          <li><svg aria-hidden="true"><use href="#i-mail"/></svg><h3>E-mail</h3><p>Opret en ny, flyt den gamle eller få den på både telefon og computer.</p></li>
+          <li><svg aria-hidden="true"><use href="#i-printer"/></svg><h3>Printer</h3><p>Forbundet til computer og telefon, klar til at printe og scanne.</p></li>
+          <li><svg aria-hidden="true"><use href="#i-tv"/></svg><h3>TV og streaming</h3><p>Kanaler, fjernbetjening, DR TV, TV 2 Play, Netflix og meget mere.</p></li>
+          <li><svg aria-hidden="true"><use href="#i-bag"/></svg><h3>Køb af nyt udstyr</h3><p>Råd om hvad der passer til dig, og hjælp til at sætte det op.</p></li>
+          <li><svg aria-hidden="true"><use href="#i-bulb"/></svg><h3>Alt derimellem</h3><p>Internet, computer, adgangskoder og sikkerhed. Spørg bare.</p></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="saadan" aria-labelledby="h-saadan">
+    <div class="wrap">
+      <h2 id="h-saadan">Sådan foregår det</h2>
+      <p class="intro">Fire enkle trin, fra du ringer, til det virker.</p>
+      <div class="steps-grid">
+        <ol class="steps">
+          <li><div><h3>Ring eller skriv</h3><p>Fortæl kort, hvad du gerne vil have hjælp til.</p></div></li>
+          <li><div><h3>Vi aftaler en tid</h3><p>Vi finder et tidspunkt, der passer dig.</p></div></li>
+          <li><div><h3>Jeg kommer hjem til dig</h3><p>Vi kigger på det sammen, og jeg forklarer undervejs.</p></div></li>
+          <li><div><h3>Du betaler, når vi er kommet videre</h3><p>Løser vi opgaven eller kommer et godt skridt videre, betaler du. Ellers koster det ingenting.</p></div></li>
+        </ol>
+        <div class="steps-photo">
+          <img src="img/sofa.jpg" width="1400" height="933" loading="lazy" alt="Et par sidder tæt sammen i sofaen og smiler, mens de kigger på en tablet.">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="price" id="pris" aria-labelledby="h-pris">
+    <div class="wrap">
+      <div>
+        <h2 id="h-pris">Pris</h2>
+        <p class="amount">400 kr.<small>pr. påbegyndt time</small></p>
+      </div>
+      <ul class="terms">
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg><div><strong>Du betaler kun, når vi kommer videre</strong><span>Bliver problemet løst, eller kommer vi et godt skridt videre, betaler du. Ellers ikke.</span></div></li>
+        <li><svg aria-hidden="true"><use href="#i-bike"/></svg><div><strong>Ingen kørsel at betale i Odense</strong><span>Ligger du mere end 20 minutter væk på cykel, koster det 100 kr. ekstra.</span></div></li>
+        <li><svg aria-hidden="true"><use href="#i-clock"/></svg><div><strong>Vi tager den tid, det kræver</strong><span>Du får det forklaret, så du selv kan bruge det bagefter.</span></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="about" id="om" aria-labelledby="h-om">
+    <div class="wrap">
+      <div>
+        <h2 id="h-om">Hej, jeg hedder Jakob</h2>
+        <p>Jeg har arbejdet med IT-support i omkring 8 år, både for virksomheder og privatpersoner. Det bedste ved jobbet er, når teknikken bare virker, og man kan bruge den til det, man gerne vil: at se billeder af børnebørnene, læse avisen eller ringe til vennerne.</p>
+        <p>Jeg tager mig god tid, og der er ingen dumme spørgsmål.</p>
+        <p class="signoff">Jakob</p>
+      </div>
+      <img src="img/jakob.jpg" width="957" height="960" loading="lazy" alt="Jakob smiler og laver et peace-tegn ved siden af to træskårne hjorte.">
+    </div>
+  </section>
+
+  <section class="contact" id="kontakt" aria-labelledby="h-kontakt">
+    <div class="wrap">
+      <div>
+        <h2 id="h-kontakt">Kontakt mig</h2>
+        <p>Ring gerne. Det er ofte det nemmeste.</p>
+        <div class="call-box">
+          <p>Telefon</p>
+          <a href="tel:+4571913993">71 91 39 93</a>
+        </div>
+        <p class="mail-line">Du kan også skrive til<br><a href="mailto:kontakt@kantan.dk">kontakt@kantan.dk</a></p>
+      </div>
+
+      <div>
+        <div class="thanks" id="tak" role="status"><p><strong>Tak for din besked.</strong> Jeg vender tilbage hurtigst muligt.</p></div>
+        <form action="https://formsubmit.co/kontakt@kantan.dk" method="POST">
+          <input type="hidden" name="_subject" value="Ny henvendelse fra kantanit.dk">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value="https://kantanit.dk/#tak">
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <div class="row">
+            <div>
+              <label for="navn">Dit navn</label>
+              <input id="navn" name="Navn" required autocomplete="name">
+            </div>
+            <div>
+              <label for="tlf">Telefonnummer</label>
+              <input id="tlf" name="Telefon" type="tel" required autocomplete="tel" inputmode="tel">
+            </div>
+          </div>
+          <div>
+            <label for="email">E-mail <span class="opt">(hvis du har en)</span></label>
+            <input id="email" name="email" type="email" autocomplete="email">
+          </div>
+          <div>
+            <label for="besked">Hvad vil du gerne have hjælp til?</label>
+            <textarea id="besked" name="Besked" required></textarea>
+          </div>
+          <div><button class="btn btn-main" type="submit">Send besked</button></div>
+          <p class="form-note">Jeg ringer eller skriver tilbage, så vi kan aftale en tid.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="logo" href="#">Kantan<span>IT</span></a>
+      <p class="foot-tag">IT-hjælp hjemme hos dig i Odense</p>
+    </div>
+    <div>
+      <a href="tel:+4571913993">71 91 39 93</a><br>
+      <a href="mailto:kontakt@kantan.dk">kontakt@kantan.dk</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
