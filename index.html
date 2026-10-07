@@ -148,11 +148,6 @@
   .terms strong { display: block; font-size: 1.3rem; }
   .terms span { color: var(--muted); }
 
-  /* About */
-  .about .wrap { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 72px; align-items: center; }
-  .about img { border-radius: 24px; width: 100%; max-width: 480px; justify-self: center; aspect-ratio: 1; object-fit: cover; }
-  .signoff { font: 600 2.4rem/1 var(--hand); color: var(--petrol); margin-top: 8px; }
-
   /* Contact */
   .contact { background: var(--paper); }
   .contact .wrap { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 72px; align-items: start; }
@@ -200,7 +195,7 @@
   }
 
   @media (max-width: 900px) {
-    .hero .wrap, .services .wrap, .steps-grid, .price .wrap, .about .wrap, .contact .wrap { grid-template-columns: 1fr; gap: 48px; }
+    .hero .wrap, .services .wrap, .steps-grid, .price .wrap, .contact .wrap { grid-template-columns: 1fr; gap: 48px; }
     .hero { padding-bottom: 72px; }
     .hero-photo { margin: 0 0 24px; }
     .hero-photo img { aspect-ratio: 4 / 3.4; }
@@ -209,7 +204,6 @@
     .services figure { position: static; }
     .services figure img { aspect-ratio: 16 / 10; object-position: center 15%; }
     section { padding: 72px 0 80px; }
-    .about img { order: -1; }
   }
   @media (max-width: 600px) {
     body { font-size: 1.2rem; }
@@ -251,7 +245,7 @@
     <div class="wrap">
       <div class="hero-copy">
         <h1>IT-hjælp hjemme hos dig, i dit tempo</h1>
-        <p class="lead">Jeg kommer hjem til dig i Odense og hjælper med telefon, e-mail, printer, TV og alt det andet, du gerne vil have til at virke.</p>
+        <p class="lead">Hej, jeg hedder Jakob. Jeg kommer hjem til dig i Odense og hjælper med telefon, e-mail, printer, TV og alt det andet, du gerne vil have til at virke. Jeg har arbejdet med IT-support i omkring 8 år, og jeg tager mig god tid. Der er ingen dumme spørgsmål.</p>
         <div class="actions">
           <a class="btn btn-main" href="tel:+4571913993"><svg aria-hidden="true"><use href="#i-phone"/></svg>Ring 71 91 39 93</a>
           <a class="btn btn-plain" href="#kontakt">Skriv en besked</a>
@@ -263,7 +257,7 @@
         </ul>
       </div>
       <div class="hero-photo">
-        <img src="img/hero.jpg" width="1400" height="2100" alt="Et smilende par sidder ved køkkenbordet og griner sammen foran en bærbar computer." fetchpriority="high">
+        <img src="img/jakob.jpg" width="957" height="960" alt="Jakob, der driver KantanIT, smiler og laver et peace-tegn ved siden af to træskårne hjorte." fetchpriority="high">
         <div class="note">Ring bare, så finder vi en tid
           <a href="tel:+4571913993">71 91 39 93</a>
         </div>
@@ -320,18 +314,6 @@
         <li><svg aria-hidden="true"><use href="#i-bike"/></svg><div><strong>Ingen kørsel at betale i Odense</strong><span>Ligger du mere end 20 minutter væk på cykel, koster det 100 kr. ekstra.</span></div></li>
         <li><svg aria-hidden="true"><use href="#i-clock"/></svg><div><strong>Vi tager den tid, det kræver</strong><span>Du får det forklaret, så du selv kan bruge det bagefter.</span></div></li>
       </ul>
-    </div>
-  </section>
-
-  <section class="about" id="om" aria-labelledby="h-om">
-    <div class="wrap">
-      <div>
-        <h2 id="h-om">Hej, jeg hedder Jakob</h2>
-        <p>Jeg har arbejdet med IT-support i omkring 8 år, både for virksomheder og privatpersoner. Det bedste ved jobbet er, når teknikken bare virker, og man kan bruge den til det, man gerne vil: at se billeder af børnebørnene, læse avisen eller ringe til vennerne.</p>
-        <p>Jeg tager mig god tid, og der er ingen dumme spørgsmål.</p>
-        <p class="signoff">Jakob</p>
-      </div>
-      <img src="img/jakob.jpg" width="957" height="960" loading="lazy" alt="Jakob smiler og laver et peace-tegn ved siden af to træskårne hjorte.">
     </div>
   </section>
 
